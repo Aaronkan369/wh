@@ -12,7 +12,6 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
-import org.springframework.util.ClassUtils;
 
 import com.wanghuan.dao.ProgressDao;
 import com.wanghuan.service.ProgressService;
@@ -45,6 +44,7 @@ public class ProgressServiceImpl implements ProgressService {
 					FileWriter fw = new FileWriter(file);
 					BufferedWriter bw = new BufferedWriter(fw);
 
+					/*计数变量*/
 					long currentCount = 0;
 					String percent = "0";
 					String percentCopy = "0";
@@ -85,7 +85,6 @@ public class ProgressServiceImpl implements ProgressService {
 	@Override
 	public String getPercent() {
 		String progress = "0";
-		/* ValueOperations<String, Object> value = redisTemplate2.opsForValue(); */
 		ValueOperations<String, String> value = stringRedisTemplate.opsForValue();
 		progress = value.get("percent");
 		return progress;

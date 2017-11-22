@@ -22,6 +22,11 @@ public class CreateProgressController {
 	@Resource(name="progressService")
 	private ProgressService progressService;
 	
+	/**
+	 * 生成txt请求
+	 * @param reqMap
+	 * @return
+	 */
 	@PostMapping(value = "/progress")
 	public String create(@RequestBody Map<String,Object> reqMap) {
 		log.info(reqMap.toString());
@@ -29,13 +34,22 @@ public class CreateProgressController {
 		return "SUCCESS";
 	}
 	
+	/**
+	 * 得到进度请求
+	 * @return
+	 */
 	@GetMapping(value = "/progress")
 	public String getPercent() {
 		return progressService.getPercent();
 	}
 	
+	/**
+	 * 删除redis中数据请求
+	 * @return
+	 */
 	@DeleteMapping(value = "/progress")
 	public String delPercentInRedis() {
+		log.info("删除成功！");
 		progressService.delPercentInRedis();
 		return "SUCCESS";
 	}
