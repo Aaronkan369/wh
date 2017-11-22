@@ -12,11 +12,11 @@ spring:
     database: 0
     host: 127.0.0.1
     port: 6379
-    password: 
+    password: null
     jedis:
       pool:
         max-idle: 300
-        max-active: 300 
+        max-active: 300
         max-wait: 1000
     timeout: 1000
 mybatis:
@@ -28,4 +28,3 @@ logging:
     com.wanghuan: DEBUG
     org.springframework: WARN
     org.spring.springboot.dao: DEBUG
-    

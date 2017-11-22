@@ -44,7 +44,7 @@ public class ProgressServiceImpl implements ProgressService {
 					FileWriter fw = new FileWriter(file);
 					BufferedWriter bw = new BufferedWriter(fw);
 
-					/*计数变量*/
+					/* 计数变量 */
 					long currentCount = 0;
 					String percent = "0";
 					String percentCopy = "0";

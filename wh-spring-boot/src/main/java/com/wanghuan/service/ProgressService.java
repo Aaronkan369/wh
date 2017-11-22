@@ -4,6 +4,7 @@ public interface ProgressService {
 
 	/**
 	 * 生成txt文本
+	 * 
 	 * @param count
 	 */
 	void createTxt(long count);
